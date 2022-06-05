@@ -3,18 +3,19 @@ using System.Data.SqlClient;
 
 namespace LibForSql
 {
-    public class classForSql
+    public  class classForSql
 
     {
         private const string connstring = @"Server=DESKTOP-VUNF03K\SqlExpress;Database=dev;Encrypt=false;Trusted_Connection=True;";
 
 
-        public  classForSql() 
+         static classForSql() 
         {
             SqlConnection  sqlConnection = new SqlConnection(connstring);
+            classForSql.OpenSql(sqlConnection); 
         }
         
-        public static void OpenSql(SqlConnection sqlConnection) 
+        public static void OpenSql( SqlConnection sqlConnection) 
         {
             sqlConnection.Open();
         }

@@ -7,4 +7,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\classForSql\LibForSql.csproj" />
+    <ProjectReference Include="..\classForUser\LibForUser.csproj" />
+  </ItemGroup>
+
 </Project>

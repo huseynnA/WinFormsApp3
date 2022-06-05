@@ -1,7 +1,10 @@
-﻿using System;
+﻿using LibForSql;
+using LibForUser;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +18,13 @@ namespace WinFormsApp3
         public FormRegist()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            classForSql.OpenSql(sqlConnection);
+            classForSql.InsertSQL(sqlConnection,textBox1.Text,textBox2.Text,Convert.ToInt32(textBox3.Text),textBox4.Text);  
         }
     }
 }
