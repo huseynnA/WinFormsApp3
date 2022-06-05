@@ -17,5 +17,24 @@ namespace WinFormsApp3
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Register")
+            {
+                this.Hide();
+                FormRegist formRegist = new FormRegist();
+                formRegist.Show();
+            }
+            else if (comboBox1.Text == "Login")
+            {
+                this.Hide();
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
+            }
+            else 
+            {
+                MessageBox.Show("Please select ");
+            }
+        }
     }
 }
