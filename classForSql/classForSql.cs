@@ -6,7 +6,7 @@ namespace LibForSql
     public  class classForSql
 
     {
-        private const string connstring = @"Server=DESKTOP-VUNF03K\SqlExpress;Database=dev;Encrypt=false;Trusted_Connection=True;";
+        public const string connstring = @"Server=DESKTOP-VUNF03K\SqlExpress;Database=dev;Encrypt=false;Trusted_Connection=True;";
 
 
          static classForSql() 
@@ -20,14 +20,18 @@ namespace LibForSql
             sqlConnection.Open();
         }
 
-        public static void InsertSQL(SqlConnection sqlConnection,string name,string username,int age,string password) 
+        public static void InsertSQL(string name,string username,int age,string password) 
         {
+            SqlConnection sqlConnection = new SqlConnection(connstring);
+
+            sqlConnection.Open();               //insert olunmur burdan davam et
             string cmd = @$"INSERT INTO Users 
-                         VALUES({name},{username},{age},{password})
+                         VALUES('{name}','{username}',{age},'{password}')
                                 ";
 
             SqlCommand sqlCommand = new SqlCommand(cmd,sqlConnection);
             sqlCommand.BeginExecuteNonQuery();
+            sqlConnection.Close();
         }
     }
 }

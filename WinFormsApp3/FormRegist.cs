@@ -22,9 +22,7 @@ namespace WinFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlConnection = new SqlConnection();
-            classForSql.OpenSql(sqlConnection);
-            classForSql.InsertSQL(sqlConnection,textBox1.Text,textBox2.Text,Convert.ToInt32(textBox3.Text),textBox4.Text);  
+            classForSql.InsertSQL(textBox1.Text,textBox2.Text,Convert.ToInt32(textBox3.Text),textBox4.Text);  
         }
     }
 }
