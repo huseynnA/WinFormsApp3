@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibForSql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace WinFormsApp3
         public FormLogin()
         {
             InitializeComponent();
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //DataBaseWorker.InsertSQL(); 
         }
     }
 }
