@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibForSql;
 
 namespace WinFormsApp3
 {
@@ -25,7 +26,17 @@ namespace WinFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //DataBaseWorker.InsertSQL(); 
+            
+            DataBaseWorker dataBaseWorker = new DataBaseWorker();
+            if (dataBaseWorker.Select(textBox1.Text, textBox2.Text))
+            {
+                MessageBox.Show("Log in successfull");
+            }
+            else 
+            {
+                MessageBox.Show("Has error ocurred .Please try again");
+            }
+
         }
     }
 }
