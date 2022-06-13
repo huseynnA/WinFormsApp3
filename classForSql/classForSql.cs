@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace LibForSql
 {
@@ -10,6 +11,9 @@ namespace LibForSql
         SqlCommand sqlCommand1 = new SqlCommand();
         SqlDataReader dataReader;
         string cmd;
+
+        SqlDataAdapter adpt;
+        DataTable dt;
 
         public void InsertSQL(string name, string surname, int age, string password)
         {

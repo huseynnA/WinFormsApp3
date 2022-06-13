@@ -16,5 +16,10 @@ namespace WinFormsApp3
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //menu ekraninda datagridview duzeltmek. Burdan davam ele
+        }
     }
 }
