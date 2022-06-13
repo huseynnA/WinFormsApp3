@@ -1,14 +1,6 @@
-﻿using LibForSql;
+﻿using LibForUser;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using LibForSql;
 
 namespace WinFormsApp3
 {
@@ -26,13 +18,12 @@ namespace WinFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            DataBaseWorker dataBaseWorker = new DataBaseWorker();
-            if (dataBaseWorker.Select(textBox1.Text, textBox2.Text))
+            classforUser classforUser = new classforUser();
+            if (classforUser.Eque(textBox1.Text, textBox2.Text))
             {
                 MessageBox.Show("Log in successfull");
             }
-            else 
+            else
             {
                 MessageBox.Show("Has error ocurred .Please try again");
             }
