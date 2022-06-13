@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibForSql;
+using LibForUser;
+
 namespace WinFormsApp3
 {
     public partial class FormRegist : Form
@@ -21,8 +23,16 @@ namespace WinFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataBaseWorker dataBaseWorker = new DataBaseWorker();
-            dataBaseWorker.InsertSQL(textBox1.Text,textBox2.Text,Convert.ToInt32(textBox3.Text),textBox4.Text);
+            //DataBaseWorker dataBaseWorker = new DataBaseWorker();
+            //dataBaseWorker.InsertSQL(textBox1.Text,textBox2.Text,Convert.ToInt32(textBox3.Text),textBox4.Text);
+            classforUser classforUser = new classforUser();
+
+            if (classforUser.getData(textBox1.Text, textBox2.Text, Convert.ToInt32(textBox3.Text), textBox4.Text) )
+            {
+                MessageBox.Show("Sign up are successfull");
+            }
+            else MessageBox.Show("Has error occurred .Please try again");
+        
         }
     }
 }

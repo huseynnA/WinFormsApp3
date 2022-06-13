@@ -9,7 +9,7 @@ namespace LibForUser
         private static string userName { get; set; }
         private static string passWord { get; set; }
 
-        public bool Eque(string Username,string Password) 
+        public bool Eque(string Username,string Password) // for login
         {
             userName = Username;
             passWord = Password;
@@ -20,15 +20,20 @@ namespace LibForUser
             }
            else return false;
         }
-        //public bool getData(string Username,string Password) 
-        //{
-        //    if (userName == Username && passWord == Password)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    return false;
-        //}
+        public bool getData(string name, string surname, int age, string password)
+        {
+            DataBaseWorker dataBaseWorker = new DataBaseWorker();
+            try
+            {
+                dataBaseWorker.InsertSQL(name, surname, Convert.ToInt32(age), password);
+                return true;
+            }
+            catch (Exception e) 
+            {
+                return false;
+            }
+
+        }
     }
 
 }

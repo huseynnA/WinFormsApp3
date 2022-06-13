@@ -20,7 +20,6 @@ namespace LibForSql
 
             sqlCommand1 = new SqlCommand(cmd, sqlConnection);
             sqlCommand1.BeginExecuteNonQuery();
-
             sqlConnection.Close();
         }
 

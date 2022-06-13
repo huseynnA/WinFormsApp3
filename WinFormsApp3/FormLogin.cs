@@ -22,6 +22,9 @@ namespace WinFormsApp3
             if (classforUser.Eque(textBox1.Text, textBox2.Text))
             {
                 MessageBox.Show("Log in successfull");
+                this.Hide();
+                Menu menu = new Menu();
+                menu.Show();
             }
             else
             {
